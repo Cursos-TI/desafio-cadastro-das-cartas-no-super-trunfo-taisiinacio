@@ -15,6 +15,8 @@ int main() {
     float area1;
     float pib1;
     int pontos1;
+    float densidade1;
+    float pibper1;
     
     // Variáveis da segunda carta
     char estado2[50];
@@ -24,6 +26,8 @@ int main() {
     float area2;
     float pib2;
     int pontos2;
+    float densidade2;
+    float pibper2;
     
     printf("===========================================\n");
     printf("    CADASTRO DE CARTAS\n");
@@ -61,6 +65,9 @@ int main() {
     printf("Digite o Número de Pontos Turísticos: ");
     fgets(temp, sizeof(temp), stdin);
     pontos1 = atoi(temp);  // Converte string para int
+
+    densidade1 = populacao1/area1; //Cálculo da Densidade Populacional por área
+    pibper1 = (pib1 *1000000000)/populacao1; // Cálculo do PIB per Capita e conversão do pib de bilhões para reais
     
     // CADASTRO DA SEGUNDA CARTA
     printf("\n=== CADASTRO DA SEGUNDA CARTA ===\n");
@@ -94,6 +101,9 @@ int main() {
     printf("Digite o Número de Pontos Turísticos: ");
     fgets(temp, sizeof(temp), stdin);
     pontos2 = atoi(temp);  // Converte string para int
+
+    densidade2 = populacao2/area2; //Cálculo da Densidade Populacional por área
+    pibper2 = (pib2 *1000000000)/populacao2; // Cálculo do PIB per Capita e conversão do pib de bilhões para reais
     
     // EXIBIÇÃO DAS CARTAS CADASTRADAS
     printf("\n\n===========================================\n");
@@ -109,6 +119,8 @@ int main() {
     printf("Área: %.2f km²\n", area1);
     printf("PIB: R$ %.2f bilhões de reais\n", pib1);
     printf("Número de Pontos Turísticos: %d\n", pontos1);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade1);
+    printf("PIB per Capita: %.2f reais\n", pibper1);
     
     printf("\n=== DADOS DA SEGUNDA CARTA ===\n");
     printf("Carta 2:\n");
@@ -119,6 +131,8 @@ int main() {
     printf("Área: %.2f km²\n", area2);
     printf("PIB: R$ %.2f bilhões de reais\n", pib2);
     printf("Número de Pontos Turísticos: %d\n", pontos2);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
+    printf("PIB per Capita: %.2f reais\n", pibper2);
         
     return 0;
 }
